@@ -20,7 +20,7 @@ Usage
 Run Apache2
 
 ```sh
-$ docker container run --rm -p 80:80 -v ${PWD}:/usr/lib/cgi-bin \
+$ docker container run --rm -p 80:80 -v ${PWD}/cgi-bin:/usr/lib/cgi-bin \
     dceoy/apache2-perl-cgi -D FOREGROUND
 ```
 

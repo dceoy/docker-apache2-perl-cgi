@@ -11,8 +11,8 @@ services:
     ports:
       - 80:80
     volumes:
-      - ${PWD}:/usr/lib/cgi-bin
-    working_dir: /usr/lib/cgi-bin
+      - ${PWD}/cgi-bin:/usr/lib/cgi-bin
+    working_dir: /etc/apache2
     entrypoint:
       - /usr/sbin/apachectl
     command:
