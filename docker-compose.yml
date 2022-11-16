@@ -1,0 +1,20 @@
+---
+version: '3'
+
+services:
+  apache2-perl-cgi:
+    container_name: apache2-perl-cgi
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: dceoy/apache2-perl-cgi:latest
+    ports:
+      - 80:80
+    volumes:
+      - ${PWD}:/usr/lib/cgi-bin
+    working_dir: /usr/lib/cgi-bin
+    entrypoint:
+      - /usr/sbin/apachectl
+    command:
+      - -D
+      - FOREGROUND
